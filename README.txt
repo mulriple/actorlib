@@ -10,8 +10,8 @@ on the received data and selects the appropriate block of code to run, based
 on the type or content of data.
 
 This library deviates a little from the above: each object is a thread,
-but instead of receiving messages, it puts its own methods in a queue,
-along with the arguments, in order to be executed later by the actor thread.
+but instead of receiving messages, it receives pointers to its own methods,
+to be executed in the context of the actor object.
 
 The library uses pthreads for threading.
 
