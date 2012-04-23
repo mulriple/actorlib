@@ -31,6 +31,22 @@ each other.
 
 2) a console actor, which is used to serialize access to cout.
 
+The main program is:
+
+    //the objects
+    console console_;
+    integer value(100);
+    extern ping ping_;
+    pong pong_(console_, value, ping_);
+    ping ping_(console_, value, pong_);
+
+    int main() {
+        cout << "press any key to exit...\n";
+        pong_.do_pong();
+        getchar();
+        return 0;
+    }
+
 The Console Actor
 -----------------
 
